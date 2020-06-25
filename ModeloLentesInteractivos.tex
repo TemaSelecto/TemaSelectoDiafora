@@ -514,7 +514,7 @@ A la vez, se realizaron distintas comparaciones con trabajos relacionados recien
 específicamente en las clasificaciones biológicas para la detección de diferencias y detalles relevantes 
 en una única pantalla.
 
-Este artículo esta organizado de la siguiente manera. En la sección II se describen trabajos relacionados en el área de la visualización de datos voluminosos. La sección III presenta un análisis del uso de las técnicas de lentes interactivos en la visualización de taxonomías biológicas. Posteriormente, la sección IV describe el diseño de  una extensión del sistema \emph{Diaforá} con una visualización InterRing para la visualización de las taxonomías biológicas. La sección V describe los detalles del  desarrollo de la extensión del sistema \emph{Diaforá}. Las secciones VI y VII describen la evaluación recibida del modelo propuesto y el trabajo futuro. Finalmente las secciones VIII y IX presentan la discusión y las conclusiones.
+Este artículo esta organizado de la siguiente manera. En la sección II se describen trabajos relacionados en el área de la visualización de datos voluminosos. La sección III presenta un análisis del uso de las técnicas de lentes interactivos en la visualización de taxonomías biológicas. Posteriormente, la sección IV describe el diseño de una extensión del sistema \emph{Diaforá} con una visualización InterRing para la visualización de las taxonomías biológicas. La sección V describe los detalles del desarrollo de la extensión del sistema \emph{Diaforá}. La sección VI describe la evaluación y validación recibida del modelo propuesto de InterRing por parte de un profesional en el área de biología. La sección VII muestra dos propuestas de trabajo futuro con distintas perspectivas de visualización. Finalmente las secciones VIII y IX presentan la discusión y las conclusiones del trabajo realizado. \\
 
    %================== TRABAJOS RELACIONADOS
 
@@ -524,29 +524,33 @@ que a mayor escala se tienen como límite la capacidad cognitiva y perceptiva de
 \begin{itemize}
   \item \textbf{Escanear secuencialmente:} el usuario puede examinar los objetos de manera secuencial.
   \item \textbf{Seleccionar un grupo:} el usuario analiza un grupo más pequeño de datos.
-  \item  \textbf{Resumir los datos:} presentar al usuario una abstracción que describa los datos.
+  \item  \textbf{Resumir los datos:} presentar al usuario una abstracción que describa los datos.\\
 \end{itemize}
+
 Los trabajos relacionados en comparación de jerarquías de datos biológicos se centran en el estudio de árboles filogenéticos y taxonomías
 biológicas.
 
-Un enfoque mencionado en \cite{visual-focus} es utilizar navegadores de árboles hiperbólicos, podría tenerse en un árbol el detalle de un taxón y en cada conjunto de ramas cada una de las subespecies, sin embargo no es muy útil a la hora de querer comparar una taxonomía de un año específico con la misma taxonomía de otro año, ya que se terminaría teniendo dos árboles con ramas bastante grandes y no brindaría ningún beneficio respecto al modelo actual de visualización, a la vez que ubicar dos árboles tan grandes en una sola pantalla no seria conveniente. Utilizando este método con dos árboles donde uno se sobrepone al otro (un phylum del 2010 por ejemplo y el mismo phylum en el 2012) podría dar una visualización de las taxonomías más apropiada, ya que de esta forma de entrada se podría visualizar algún cambio en las ramas de los árboles al notarse que no son iguales, o por el contrario notar que no han habido cambios pronunciados en otras ramas.
+Un enfoque mencionado en \cite{visual-focus} es utilizar navegadores de árboles hiperbólicos, donde podría tenerse en un árbol el detalle de un taxón y en cada conjunto de ramas de dicho árbol cada una de las subespecies, sin embargo no es muy útil a la hora de querer comparar una taxonomía completa de un año específico con la misma taxonomía de otro año, ya que se terminaría teniendo dos árboles con ramas y sub ramas bastante profundas y voluminosas, lo cual no brindaría ningún beneficio respecto al modelo actual de visualización, a la vez, el hecho de ubicar dos árboles tan grandes en una sola pantalla no sería conveniente, ya que se puede perder de vista las comparaciones específicas que se quieren realizar. Utilizando este método con dos árboles donde uno se sobrepone al otro (un phylum del 2010 por ejemplo y el mismo phylum en el 2012) podría dar una visualización de las taxonomías más apropiada, ya que de esta forma de entrada se podría visualizar algún cambio en las ramas de los árboles al notarse que no son iguales, o por el contrario notar que no han habido cambios pronunciados en otras ramas.
 
 Otro modelo de visualización para grandes cantidades de información, es tener un lente sobre una cuadrícula con puntos distribuidos que representen concentraciones de datos \cite{lens-visual}, esta técnica representa un modelo muy útil cuando se trate de profundizar en una única taxonomía de un año específico, sin embargo a la hora de realizar una comparación con otro año, el lente podría ser confuso a la hora de sacar diferencias entre subespecies.
 \begin{figure}[]
   \centering
-  \includegraphics[scale=0.6]{plots-lens}
+  \includegraphics[scale=0.7]{plots-lens}
   \caption{Ejemplo de visualización usando técnica de lentes. Tomado  de \cite{lens-visual}}
+  \label{lens-img}
 \end{figure}
 
 En \cite{graph-explore} se puede observar un modelo de visualización con grafos de exploración, dicho modelo utiliza colores y distintas aristas para representar la información, a la vez cuenta con una serie de puntos de interconexión entre los puntos mostrados, este modelo tiene cierta similitud al modelo propuesto, sin embargo dependiendo de la cantidad de subespecies para una especie, podría ser confuso o utilizar tantos colores que lleguen a quitar el enfoque en las comparaciones taxonómicas. Dichos puntos al estar cerca unos de otros pueden llegar a distorsionar una rama. También sobreponer un grafo sobre otro eliminaría la comprensión de lo que se puede buscar, que es comparar sin invertir mucho tiempo, una especie con la misma en distinto período.
 \begin{figure}[]
   \centering
-  \includegraphics[scale=0.6]{graphs-exploration}
+  \includegraphics[scale=0.7]{graphs-exploration}
   \caption{Ejemplo de visualización de gráficos hiperbólicos y la estructura propuesta. Tomado de \cite{graph-explore}}
+  \label{hiperbolic-graph-ref} 
 \end{figure}
 
 Se puede observar además un modelo de visualización tridimensional \cite{phylo-scheme}, donde se tienen distintas capas, una al lado de otra en secuencia, dichas capas podrían representar una especie o subespecie del phylum. También se muestran entre cada capa una serie de lineas con distintos colores, que podrían llegar a representar de alguna manera la información de cada subespecie, como pueden ser las cantidades de categorías o especies en específico que existen. Este modelo tridimensional es bastante útil si de visualizar información de un único año se tratara, ya que al modelo contener tantas lineas simétricas con distintos colores, sobreponer una sobre otra podría ser confuso, sin embargo se podría mantener dos esquemas uno encima del otro, mostrando por medio de las líneas la información comparativa entre los años del phylum. Una ventaja de este modelo es la capacidad de realizar giros tridimencionales, dando al taxónomo una perspectiva muy amplia desde más de un solo punto de vista, siendo útil talvez no específicamente para comparar un phylum entre distintos períodos, pero si para entrar en detalle del taxón en un único año y visualizar información del mismo.
 
+En la Figura \ref{lens-img} se puede observar el modelo de lentes mencionado, donde puede realizarse una ampliación de los datos, pero el significado de cada uno de ellos a pequeña escala no se puede representar, no se sabría que representa cada punto al ser una visualización tan densa. En la Figura \ref{hiperbolic-graph-ref} se muestra un ejemplo de gráfico hiperbólico y su estructura propuesta. \\
 
 \section{Análisis del uso de lentes interactivos en taxonomías biológicas}
 
@@ -556,7 +560,7 @@ Uno de los sentidos más importantes de los seres humanos es la visión.
  \newline
  \begin{itemize}
   \item \textbf{La taxonomía:} es la ciencia que estudia los principios, métodos y fines de la clasificación. Este término se utiliza especialmente en biología para referirse a una clasificación ordenada y jerarquizada de los seres vivos y en educación para ordenar y diseñar los objetivos del aprendizaje. \cite{linne}
-  \item \textbf{La taxonomía en la biología:} clasifica de forma ordenada a los seres vivos\cite{linne}. La clasificación, niveles o categorías taxononómicas son importantes ya que ayudan a evitar la confusión entre las especies al regirse por un sistema universal y consensual. De esta manera, sirve para que la comunidad científica pueda definir sin errores al ser vivo que pretenden estudiar o nombrar.
+  \item \textbf{La taxonomía en la biología:} clasifica de forma ordenada a los seres vivos\cite{linne}. La clasificación, niveles o categorías taxonómicas son importantes ya que ayudan a evitar la confusión entre las especies al regirse por un sistema universal y consensual. De esta manera, sirve para que la comunidad científica pueda definir sin errores al ser vivo que pretenden estudiar o nombrar.\\
 \end{itemize}
 
  Sin embargo, dado a que el tamaño de los datos aumenta constantemente,
@@ -614,7 +618,7 @@ los árboles de manera automática entre estas se destacan la diferencia mínima
 El proceso de la taxonomía continúa con la asignación de nombres (de acuerdo a los principios de la nomenclatura), la elaboración de las claves dicotómicas de identificación y la creación de los sistemas de clasificación.
 
 Los taxones permiten clasificar a los seres vivos a partir de una jerarquía de inclusión (cada grupo abarca a otros menores mientras está subordinado a uno mayor). Las categorías fundamentales, desde la más abarcativa hasta la menor, son el 
-dominio, el reino, el filo o división, la clase, el orden, la familia, el género y la especie.
+dominio, el reino, el filo o división, la clase, el orden, la familia, el género y la especie. \\
 
 
 \section{Diseño de visualización InterRing para el sistema taxonómico Diáfora}
@@ -634,7 +638,7 @@ los nodos se colorean de acuerdo a su nivel facilitando que se pueda reorientar 
 
 \begin{itemize}
   \item \textbf{Árbol radial:} En un diagrama, donde las ideas son expuestas de una manera ordenada y sistemática permitiendo mostrar las relaciones entre ellas. \cite{book_keshary_2001}
-  El objetivo es inducir a construir estructuras mentales identificando ideas principales e ideas subordinadas según el orden lógico. 
+  El objetivo es inducir a construir estructuras mentales identificando ideas principales e ideas subordinadas según el orden lógico. \\
 \end{itemize}
 
 
@@ -644,7 +648,7 @@ de la estructura jerárquica que está siendo desplegada en el árbol taxonómic
 Al mover libremente el árbol taxonómico, los usuarios del sistema pueden diseñar sus propias categorizaciones, evitando que se dé una recuperación tardía de los elementos o datos específicos. Por ejemplo, relacionar una versión del 2010 con otro árbol del 2012 podría requerir una búsqueda exhaustiva para localizar el cambio respectivo en la otra representación. 
 
 Implementando InterRing logramos resaltar datos en representaciones taxonómicas, ayudando a las personas cuando cambian entre datos grupales como especie, género o familias.
-\newline
+
 \subsection{Interacción: }
 El sistema Diáfora proporcionará un acceso amigable al historial de cambio de datos. Las técnicas de interacción con el sistema Diaforá es a través de elementos comunes
 conocidas desde el escritorio, como doble clic, clic izquierdo o derecho. Por otro lado, las tareas de análisis de la información requieren de poca manipulación de widgets y diálogos de interfaz, facilitando la comprensión de los datos. 
@@ -657,7 +661,7 @@ Para nuestra propuesta, generamos un conjunto  de lentes distribuidos de manera 
 
 \subsection{Tamaño de la visualización: } Normalmente para una correcta visualización taxonomica será necesario utilizar el programa Diaforá en modo Maximizado, es decir, que la ventana ocupe todo el espacio de pantalla.
 
-\subsection{Resolución: } La resolución es un problema tanto para la salida (display) y para la entrada. La resolución de la pantalla tiene gran influencia en la legibilidad de las visualizaciones de información por lo que se recomienda una pantalla grande. 
+\subsection{Resolución: } La resolución es un problema tanto para la salida (display) y para la entrada. La resolución de la pantalla tiene gran influencia en la legibilidad de las visualizaciones de información por lo que se recomienda una pantalla grande. \\
 
 \section{Desarrollo del modelo de visualización en el sistema Diaforá}
 Según lo investigado en \cite{sancho_diafora}, el método \emph{edge drawing} puede comunicar de manera clara las
@@ -709,7 +713,7 @@ Utilizando el sistema \emph{Diaforá} para analizar el órden taxonómico \emph{
 En la figura \ref{haplotaxida} podemos apreciar la comparación entre la versión de la taxonomía del año 2012 y la versión de la taxonomía de 2019 del Catalogue of Life \cite{catalogueoflife}.
 \begin{figure*}[]
   \centering
-  \includegraphics[scale=1.5]{useCaseHaplotaxida.png}
+  \includegraphics[scale=1.7]{useCaseHaplotaxida.png}
   \caption{Caso de uso: Orden Haplotaxida}
   \label{haplotaxida}
 \end{figure*}
@@ -725,7 +729,7 @@ Si el usuario sigue explorando el órden \emph{Haplotaxida} y compara una de las
 
 \begin{figure}[]
   \centering
-  \includegraphics[scale=2.3]{Sparganophilidae_interring.png}
+  \includegraphics[scale=3]{Sparganophilidae_interring.png}
   \caption{Comparativa familia \emph{Sparganophilidae}. Izquierda versión 2012, derecha versión 2019.}
   \label{sparg_fam}
 \end{figure}
@@ -749,34 +753,25 @@ mismo formato de árbol taxonómico que en la versión previa del sistema \emph{
 La aplicación se encuentra publicada en el url: \url{https://diafora2.herokuapp.com/} donde se puede acceder y probar las extensiones
 mencionadas al sistema \emph{Diaforá}.
 
-Los archivos que contienen las taxonomías siguen el formato original de la primera versión del sistema \cite{sancho_diafora}. \\
+Los archivos que contienen las taxonomías siguen el formato original de la primera versión del sistema \cite{sancho_diafora}. \\ \\
 
 
 \section{Validación del modelo propuesto}
-En esta sección se muestran un evaluación que realizó un biólogo para validar que el modelo de 
-visualización propuesto cumple con los requisitos para que los taxónomos 
-tengan una visualización más adecuada de las taxonomías a la ya existente.
+En esta sección se muestra una evaluación que realizó un biólogo para validar que el modelo de visualización propuesto de InterRing cumple con los requisitos para que los taxónomos tengan una visualización más adecuada de las taxonomías y comparación de las mismas respecto al modelo ya existente de árboles con todas las subespecies.
 \newline
 \begin{itemize}
   \item \textit{“La clasificación en relaciones filogenéticas es la principal función de un taxónomo, para realizar el trabajo de una manera más rápida y eficiente, es necesario contar con herramientas para un mejor rendimiento de los datos y obtener formas de simplificar los mismos de una forma visual y no tan transaccional. \\
   Cuando se llega a tener una gran cantidad de datos para un análisis filogenético, es posible que se dificulten determinar las relaciones sin una visualización gráfica, al contar cada phylum con una gran cantidad de subespecies, por lo tanto, la utilización de estas visualizaciones, en específico, la herramienta “InterRing”, tiene mucha utilidad en estos casos. El modelo actual donde el taxónomo se ve obligado a realizar "scroll" de forma tan expandida, definitivamente no es método eficaz y funcional para un taxónomo, ya que toma mucho tiempo por analizar las especies, así como se la complejidad que nace a la hora de comprender las relaciones entre los elementos de interés. \\
-  Es por esto, que la herramienta “InterRing” es una opción mucho más viable, ya que no requiere realizar “scroll”, más bien, la herramienta permite al taxónomo visualmente entender con mucha más precisión si existieron cambios con el paso del tiempo. Ésta opción le permite al usuario explorar en otras ramas del árbol taxonómico”.}
+  Es por esto, que la herramienta “InterRing” es una opción mucho más viable, ya que no requiere realizar “scroll”, más bien, la herramienta permite al taxónomo visualmente entender con mucha más precisión si existieron cambios con el paso del tiempo. Ésta opción le permite al usuario explorar en otras ramas del árbol taxonómico”.} \\
   
 Biólogo BSc. André Leandro C. \\
 
-  \item Evaluación 2.\\
 \end{itemize}
 
 %================== TRABAJO FUTURO
 \section{Trabajo Futuro}
 
 El modelo actual junto con su implementación, permite a los taxónomos tener una herramienta para visualizar árboles taxonómicos y comparar unos con otros, así como ver ciertos datos estadísticos. Por limitantes en el tiempo para el desarrollo de la presente investigación, se llevaron a cabo una serie de propuestas respecto a posibles extensiones de la presente implementación del sistema de visualización de taxonomías, mezclando con técnicas actuales para definir infraestructura computacional, una tarea llevada a cabo durante varias décadas por departamentos técnicos. Se muestran más a detalle dichas propuestas en esta sección.
-
-\begin{figure*}[]
-  \centering
-  \includegraphics[scale=0.9]{graph-theory.png}
-  \caption{Ejemplo conceptual de transformación de los grafos propuestos, mostrando una entra y una salida, la cual podría representarse como un árbol inicial y la salida como el resultado de la diferencia propuesta, siendo un árbol o grafo más pequeño, más sencillo y rápido de analizar. Tomado de google images. Paul Hinze, Hashicorp.}
-\end{figure*}
 
 Para un departamento de IT el concepto de aprovisionar de forma manual o automatizada una infraestructura para un sistema de cómputo \cite{aut-cloud-prov}, termina siendo el conjunto de tareas que tratan en preparar un conjunto de servidores, así como software adicional, configuración de redes, seguridad a la misma y demás, con el fin de ejecutar dentro de ellos aplicaciones de software que realizan distintas tareas, cumpliendo con los múltiples requerimientos dentro de una lógica de negocio.
 
@@ -790,26 +785,40 @@ Existe una configuración en archivos .yaml que define un estado $deseado$ de la
 
 Un ejemplo de esta diferencia de grafos en Terraform junto con el proceso de recuperación, podría ser tener una definición inicial deseada con 5 servidores corriendo en todo momento, si en algún momento un servidor se cae, Terraform va a realizar la comparación entre el estado $deseado$ de la infraestructura (5 servidores) y el estado $actual$ (4 servidores al estar 1 servidor caído) y va a levantar una instancia para volver a tener el estado actual igual al estado deseado.
 
+\subsection{I Propuesta}
 Una propuesta para continuar con esta investigación sobre visualizaciones para taxonomías biológicas y una posible implementación de dicho modelo, más allá de un prototipo, va muy de la mano con todas estas tendencias de IaC, aplicando un enfoque similar al de la teoría de grafos para comparación de árboles taxonómicos.
 
 Se propone diseñar otra vista para el taxónomo, donde no va a visualizar todo el despliegue de cada árbol en un año distinto, sino que se podría almacenar en un árbol el contenido del $phylum$ del año inicial de la comparación y en otro árbol distinto el contenido del $phylum$ para el siguiente año que se esté comparando. Posterior a eso se puede llevar a cabo una diferencia de árboles y guardar dicha diferencia en un tercer árbol, el cual va a servir para visualizar únicamente los cambios que han surgido en el $phylum$ en los años que esté comparando. 
 
+\begin{figure}[]
+  \centering
+  \includegraphics[scale=0.5]{graph-theory.png}
+  \caption{Ejemplo de transformación de los grafos propuestos, mostrando una entra y una salida, la cual podría representarse como un árbol inicial y la salida como el resultado de la diferencia propuesta, siendo un árbol o grafo más pequeño, más sencillo y rápido de analizar. Tomado de google images. Paul Hinze, Hashicorp.}
+  \label{graph-hasi-ref}
+\end{figure}
+
+En la Figura \ref{graph-hasi-ref} se observa un ejemplo conceptual de una transformación entre dos grafos, lo cual podría servir como base para realizar dicha diferencia de árboles y mostrar al usuario un árbol solo con sus diferencias, obviando los datos que se mantuvieron iguales.
+
 Dicho árbol posiblemente contenga considerablemente menos información que cualquiera de los árboles previos, al menos que se estén comparando las mismas especies con una diferencia muy marcada de años. De esta manera, se puede contar con la pantalla de visualización actual junto con los InterRing y a la vez con una segunda pantalla donde se muestre la diferencia o los cambios que han habido entre los años, sin mostrar lo que no haya cambiado.
 
-Dicha pantalla podría constar de datos que representen los cambios que hubieron, puede representarse como un único árbol y a la vez se pueden agregar gráficos de InterRing para visualizar la información de una manera distinta. \\
+Dicha pantalla podría constar de datos que representen los cambios que hubieron, puede representarse como un único árbol y a la vez se pueden agregar gráficos de InterRing para visualizar la información de una manera distinta. \\ 
 
-Segundo modelo propuesto: "Comparación estadística de múltiples períodos de un mismo Phylum".
-\begin{figure}
+
+\subsection{II Propuesta}
+Comparación estadística de múltiples períodos de un mismo Phylum.
+
+\begin{figure*}
   \centering
-  \includegraphics[]{interringCompare.png}
+  \includegraphics[scale=0.38]{mockup.png}
   \caption{Modelo conceptual para una propuesta de comparaciones estadísticas utilizando múltiples períodos de un mismo phylum.}
   \label{mockup}
-\end{figure}
+\end{figure*}
+
 Otra propuesta para un posible trabajo a futuro o un añadido al presente modelo, es implementar otra pantalla en el software taxonómicos donde el taxónomo pueda realizar comparaciones a nivel del mismo phylum pero en más de dos años, por ejemplo introducir los dataset del phylum para el año 2010, 2012, 2015 y 2019 para posteriormente en una nueva visualización detectar cuáles han sido los cambios más pronunciados. Dicha visualización no sería representada a nivel de árbol como la presente, sino que sería más una representación estadística. Se podría introducir las taxonomías deseadas y dicho modelo podría iterar sobre cada árbol y presentar por ejemplo cuál es el año en donde se presentaron más eliminaciones de especies, cuál fue el o los años en donde se agregaron más especies a una subespecie del phylum, también cuáles fueron los años en donde menos cambios a nivel de agregación y eliminación hubieron. 
 
 Si bien es muy útil visualizar más información que la mencionada en esta segunda propuesta a trabajo a futuro, también es importante que el taxónomo no tenga una única forma de visualizar los datos, entre más perspectivas tenga, puede ser más útil y la toma de decisiones puede tomar menos tiempo. Esta idea surge como una propuesta donde el taxónomo quiera tener una especie de resumen que vaya más allá que sólo dos períodos, sino que pueda ir más allá.
 
-En la Figura \ref{mockup}, se presenta un mockup o estilo conceptual respecto a esta última propuesta para trabajo a futuro, donde se puede tener un espacio de visualización estadístico sin incluir todas las subespecies o subcategorías del phylum. Dicha pantalla podría incluirse a modo de pestaña en el UI general de la aplicación, permitiendo al taxónomo mantener la pestaña inicial con la comparación entre los dos árboles (modelo actual junto con los gráficos de InterRing) y añadir una segunda o tercer pestaña en donde se pueda hacer el importe de los distintos datasets para cada periodo del mismo phylum y visualizar a nivel estadístico cual o cuales son los años en donde se da ciertas condiciones.
+En la Figura \ref{mockup}, se presenta un diseño o estilo conceptual respecto a la segunda propuesta para trabajo a futuro, donde se puede tener un espacio de visualización estadístico sin incluir todas las subespecies o subcategorías del phylum. Dicha visualización podría dar una perspectiva más amplia de los cambios que se han realizado no solo entre un período, sino entre distintos períodos, se podría observar cuales años han sufrido más cambios. El diseño de dicha pantalla podría incluirse a modo de pestaña en el UI general de la aplicación, permitiendo al taxónomo mantener la pestaña inicial con la comparación entre los dos árboles (modelo actual junto con los gráficos de InterRing) y añadir una segunda o tercer pestaña en donde se pueda hacer el importe de los distintos datasets para cada periodo del mismo phylum y visualizar a nivel estadístico cual o cuales son los años en donde se da ciertas condiciones. Los menús con botones y demás opciones, podrían des habilitarse cuando el usuario se encuentre en la presente pantalla, ya que son opciones más relacionadas a los árboles del Diaforá.
 
 Cabe mencionar que dicho modelo debe contar con una validación rigurosa a la hora de importar los datos, ya que el taxónomo por error, en el importe de los datos puede cometer un error y agregar a la lista de archivos un phylum que no corresponde al que se quiere visualizar, dando espacio a que los resultados no sean del todo coherentes.
 
@@ -818,10 +827,10 @@ Cabe mencionar que dicho modelo debe contar con una validación rigurosa a la ho
 El análisis taxonómico requiere de la visualización de grandes cantidades de datos correspondientes a las clasificaciones biológicas de los seres vivos, organizadas en el sistema 
 propuesto por \emph{Carl 
 aeus} durante el siglo \emph{XVIII} \cite{linne}.
-Este anális de los seres vivos  ha sido desarrollado por diferentes entidades y biólogos a lo largo del mundo, muchas veces recopilando información sobre las mismas especies
-y clasificandolas según su criterio, por lo que se ha encontrado con el problema de inconsistencias en las taxonomías biológicas que han sido creadas por 
+Este análisis de los seres vivos  ha sido desarrollado por diferentes entidades y biólogos a lo largo del mundo, muchas veces recopilando información sobre las mismas especies
+y clasificándolas según su criterio, por lo que se ha encontrado con el problema de inconsistencias en las taxonomías biológicas que han sido creadas por 
 diferentes científicos a lo largo de la historia \cite{avise_liu_2011}.
-Como parte de la investigación previa a este trabajo se determinó que una parte importante de la labor de los taxonómos actuales es la curación y refinamiento de las taxonomías existentes
+Como parte de la investigación previa a este trabajo se determinó que una parte importante de la labor de los taxónomos actuales es la curación y refinamiento de las taxonomías existentes
 definiendo y corrigiendo los cambios haciendo divisiones, unificaciones, eliminando o agregando taxones a las clasificaciones ya existentes.
 El sistema Diaforá \cite{sancho_diafora} permite a los taxónomos contar con una herramienta  de visualización de datos que les permite comparar distintas versiones taxonómicas que han sido creadas y modificadas en el tiempo.
 
@@ -834,7 +843,7 @@ proveer al usuario de la información que corresponde a la sub-área taxonómica
 Adicionalmente, se determina que la incorporación de las gráficas \emph{InterRing} en el sistema permiten una comparación visual inmediata de diferencias marcadas en secciones del árbol.
 Por lo que es sencillo determinar si se han incorporado nuevos nodos a alguna de las taxonomías.
 
-El sistema Diaforá como herramienta de apoyo visual en el refinamiento de taxonomías biológias ayuda a mejorar el análisis de diferencias en grandes colecciones de datos, uno de los grandes 
+El sistema Diaforá como herramienta de apoyo visual en el refinamiento de taxonomías biológicas ayuda a mejorar el análisis de diferencias en grandes colecciones de datos, uno de los grandes 
 retos de la labor de los taxónomos.
 
 \section{Conclusiones}
@@ -852,26 +861,24 @@ Además, de distintos modelos estudiados durante la investigación de modelos de
 %The conclusion goes here.
 
 \subsection{Autoevaluación del trabajo realizado }
-Según los objetivos presentados en la propuesta orginal de este trabajo:
+Según los objetivos presentados en la propuesta original de este trabajo: \\
 
 \textbf{Objetivo general:}
 \begin{itemize}
 \item Creación de un modelo de visualización que permita la comparación de árboles taxonómicos manteniendo el contexto de la totalidad de la clasificación taxonómica.
 \end{itemize}
-\hfill \break
 
-\hfill \break
 \textbf{Objetivos específicos:}
 \begin{enumerate}
 \item Incorporar el uso de lentes interactivos para resaltar los detalles de las diferencias entre versiones de clasificaciones taxonómicas.
 \item Diseñar una visualización adicional para el sistema Diaforá que permita observar la totalidad del árbol taxonómico en una única pantalla.
 \item Implementar el modelo de visualización propuesto como una extensión del sistema Diaforá. 
-\item Validar la efectividad de la visualización propuesta con usuarios del sistema Diaforá
+\item Validar la efectividad de la visualización propuesta con usuarios del sistema Diaforá. \\
 \end{enumerate}
 
 Podemos determinar un nivel de completitud aceptable para cada uno de los mismos lo que detallamos en la siguiente tabla de autoevaluación:
 \begin{table}[h!]
-  \begin{tabular}{|m{1cm}|m{1cm}|m{4cm}|}
+  \begin{tabular}{|m{1cm}|m{1.5cm}|m{4cm}|}
   \hline
   Objetivo & Porcentaje & Justificación \\
   \hline \hline
