@@ -538,14 +538,14 @@ Otro modelo de visualización para grandes cantidades de información, es tener 
   \caption{Ejemplo de visualización usando técnica de lentes. Tomado  de \cite{lens-visual}}
 \end{figure}
 
-En \cite{graph-explore} se puede observar un modelo de visualización con grafos de exploración, dicho modelo utiliza colores y distintas aristas para representar la información, a la vez cuenta con una serie de puntos de interconexión entre los puntos mostrados, este modelo tiene cierta similitud al modelo propuesto, sin embargo dependiendo de la cantidad de subespecies para una especie, podría ser confuso o utilizar tantos colores que lleguen a quitar el enfoque en las comparaciones taxonómicas, dichos puntos al estar cerca unos de otros pueden llegar a distorsionar una rama, también sobreponer un grafo sobre otro eliminaría la comprensión de lo que se puede buscar, que es comparar sin invertir mucho tiempo, una especie con la misma en distinto período.
+En \cite{graph-explore} se puede observar un modelo de visualización con grafos de exploración, dicho modelo utiliza colores y distintas aristas para representar la información, a la vez cuenta con una serie de puntos de interconexión entre los puntos mostrados, este modelo tiene cierta similitud al modelo propuesto, sin embargo dependiendo de la cantidad de subespecies para una especie, podría ser confuso o utilizar tantos colores que lleguen a quitar el enfoque en las comparaciones taxonómicas. Dichos puntos al estar cerca unos de otros pueden llegar a distorsionar una rama. También sobreponer un grafo sobre otro eliminaría la comprensión de lo que se puede buscar, que es comparar sin invertir mucho tiempo, una especie con la misma en distinto período.
 \begin{figure}[]
   \centering
   \includegraphics[scale=0.6]{graphs-exploration}
   \caption{Ejemplo de visualización de gráficos hiperbólicos y la estructura propuesta. Tomado de \cite{graph-explore}}
 \end{figure}
 
-Se puede observar además un modelo de visualización tridimensional \cite{phylo-scheme}, donde se tienen distintas capas, una al lado de otra en secuencia, dichas capas podrían representar una especie o subespecie del phylum. También se muestran entre cada capa una serie de lineas con distintos colores, que podrían llegar a representar de alguna manera la información de cada subespecie, como pueden ser las cantidades de categorías o especies en específico que existen. Este modelo tridimensional es bastante útil si de visualizar información de un único año se tratara, ya que al modelo contener tantas lineas simétricas con distintos colores, sobreponer una sobre otra podría ser confuso, sin embargo se podría mantener dos esquemas uno encima del otro, mostrando por medio de las líneas la información comparativa entre los años del phylum. Una ventaja de este modelo es la capacidad de realizar giros tridimencionales, dando al taxónomo una perspectiva muy amplia desde más de un solo punto de vista, siendo útil talvez no específicamente para comparar un phylum entre distintos períodos, pero si para entrar en detalle del phylum en un único año y visualizar información del mismo.
+Se puede observar además un modelo de visualización tridimensional \cite{phylo-scheme}, donde se tienen distintas capas, una al lado de otra en secuencia, dichas capas podrían representar una especie o subespecie del phylum. También se muestran entre cada capa una serie de lineas con distintos colores, que podrían llegar a representar de alguna manera la información de cada subespecie, como pueden ser las cantidades de categorías o especies en específico que existen. Este modelo tridimensional es bastante útil si de visualizar información de un único año se tratara, ya que al modelo contener tantas lineas simétricas con distintos colores, sobreponer una sobre otra podría ser confuso, sin embargo se podría mantener dos esquemas uno encima del otro, mostrando por medio de las líneas la información comparativa entre los años del phylum. Una ventaja de este modelo es la capacidad de realizar giros tridimencionales, dando al taxónomo una perspectiva muy amplia desde más de un solo punto de vista, siendo útil talvez no específicamente para comparar un phylum entre distintos períodos, pero si para entrar en detalle del taxón en un único año y visualizar información del mismo.
 
 
 \section{Análisis del uso de lentes interactivos en taxonomías biológicas}
@@ -553,7 +553,7 @@ Se puede observar además un modelo de visualización tridimensional \cite{phylo
 Uno de los sentidos más importantes de los seres humanos es la visión. 
 Ésta es empleada para obtener la información visual del entorno, y en este caso específico la visualización de taxonomías se ha
  convertido en un medio para ayudar a las personas de diversos campos a obtener información relevante sobre los datos organizados jerárquicamente. 
-
+ \newline
  \begin{itemize}
   \item \textbf{La taxonomía:} es la ciencia que estudia los principios, métodos y fines de la clasificación. Este término se utiliza especialmente en biología para referirse a una clasificación ordenada y jerarquizada de los seres vivos y en educación para ordenar y diseñar los objetivos del aprendizaje. \cite{linne}
   \item \textbf{La taxonomía en la biología:} clasifica de forma ordenada a los seres vivos\cite{linne}. La clasificación, niveles o categorías taxononómicas son importantes ya que ayudan a evitar la confusión entre las especies al regirse por un sistema universal y consensual. De esta manera, sirve para que la comunidad científica pueda definir sin errores al ser vivo que pretenden estudiar o nombrar.
@@ -585,6 +585,7 @@ los árboles de manera automática entre estas se destacan la diferencia mínima
  intenta resolver un problema localizado de visualización, alterando temporalmente una parte seleccionada de la representación de los datos.
 
  También siguiendo el trabajo de Tominski, se definen como propiedades importantes de los lentes interactivos:
+ \newline
  \begin{itemize}
    \item  \emph{Forma:} La forma del lente virtualmente no tiene restricción, sin embargo, es común que muchos sistemas intenten
    emular el modelo de un lente del mundo real, en su mayoría circulares, no obstante esta forma puede adaptarse según la naturaleza de los datos
@@ -633,17 +634,17 @@ los nodos se colorean de acuerdo a su nivel facilitando que se pueda reorientar 
 
 \begin{itemize}
   \item \textbf{Árbol radial:} En un diagrama, donde las ideas son expuestas de una manera ordenada y sistemática permitiendo mostrar las relaciones entre ellas. \cite{book_keshary_2001}
-  El objetivo es inducir a construir estructuras mentales identificando ideas principales e ideas subordinadas según el orden lógico. Biól
+  El objetivo es inducir a construir estructuras mentales identificando ideas principales e ideas subordinadas según el orden lógico. 
 \end{itemize}
 
 
 Haciendo uso de una visualización de tipo \emph{InterRing}\cite{yang_ward_rundensteiner}, que emplea
 el concepto de distorción circular extendemos la capacidad actual del sistema \emph{Diaforá} para mantener el contexto
 de la estructura jerárquica que está siendo desplegada en el árbol taxonómico. De esta manera se proporciona la capacidad de mover elementos de la interfaz libremente, permitiendo a los usuarios trabajar con su propia organización en los elementos taxonómicos, ayudando a los colaboradores a crear y mantener modelos mentales de un conjunto de datos que contiene variaciones a través de los años. 
-Al mover libremente el árbol taxonómico, los usuarios del sistema pueden imponer sus propias categorizaciones, evitando que se dé una recuperación tardía de los elementos o datos específicos. Por ejemplo, relacionar una versión del 2010 con otro árbol del 2012 podría requerir una búsqueda exhaustiva para localizar el cambio respectivo en la otra representación. 
+Al mover libremente el árbol taxonómico, los usuarios del sistema pueden diseñar sus propias categorizaciones, evitando que se dé una recuperación tardía de los elementos o datos específicos. Por ejemplo, relacionar una versión del 2010 con otro árbol del 2012 podría requerir una búsqueda exhaustiva para localizar el cambio respectivo en la otra representación. 
 
 Implementando InterRing logramos resaltar datos en representaciones taxonómicas, ayudando a las personas cuando cambian entre datos grupales como especie, género o familias.
-
+\newline
 \subsection{Interacción: }
 El sistema Diáfora proporcionará un acceso amigable al historial de cambio de datos. Las técnicas de interacción con el sistema Diaforá es a través de elementos comunes
 conocidas desde el escritorio, como doble clic, clic izquierdo o derecho. Por otro lado, las tareas de análisis de la información requieren de poca manipulación de widgets y diálogos de interfaz, facilitando la comprensión de los datos. 
@@ -654,7 +655,7 @@ Para casos prácticos, solo se usan dos lentes simultáneamente durante la explo
 
 Para nuestra propuesta, generamos un conjunto  de lentes distribuidos de manera uniforme sobre la superficie del árbol radial en el cual el tiempo de respuesta no se ve afectado por la prueba de profundidad. 
 
-\subsection{Tamaño: } Normalmente una visualización usará todo el espacio de pantalla disponible para mostrar los cambios visualización
+\subsection{Tamaño de la visualización: } Normalmente para una correcta visualización taxonomica será necesario utilizar el programa Diaforá en modo Maximizado, es decir, que la ventana ocupe todo el espacio de pantalla.
 
 \subsection{Resolución: } La resolución es un problema tanto para la salida (display) y para la entrada. La resolución de la pantalla tiene gran influencia en la legibilidad de las visualizaciones de información por lo que se recomienda una pantalla grande. 
 
@@ -752,7 +753,7 @@ Los archivos que contienen las taxonomías siguen el formato original de la prim
 
 
 \section{Validación del modelo propuesto}
-En esta sección se muestran una serie de evaluaciones que realizaron distintas personas para validar que el modelo de 
+En esta sección se muestran un evaluación que realizó un biólogo para validar que el modelo de 
 visualización propuesto cumple con los requisitos para que los taxónomos 
 tengan una visualización más adecuada de las taxonomías a la ya existente.
 \newline
